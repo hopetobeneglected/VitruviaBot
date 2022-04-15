@@ -1,19 +1,9 @@
 import telebot
 import config
-import logging
 
 from telebot import types
 
-import os
-
-PORT = int(os.environ.get('PORT', 5000))
-
 bot = telebot.TeleBot(config.TOKEN, parse_mode='html')
-
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                    level=logging.INFO)
-
-logger = logging.getLogger(__name__)
 
 
 @bot.message_handler(commands=['start'])
@@ -252,3 +242,5 @@ def callback_inline(call):
 
 # RUN
 bot.polling(none_stop=True)
+bot.set_webhook('https://vitruviabot.herokuapp.com/' + config.TOKEN)
+

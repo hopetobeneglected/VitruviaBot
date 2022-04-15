@@ -252,4 +252,3 @@ def callback_inline(call):
 
 # RUN
 bot.polling(none_stop=True)
-bot.set_webhook(url='https://damp-brook-53988.herokuapp.com/')

@@ -1,10 +1,19 @@
 import telebot
 import config
+import logging
 
 from telebot import types
 
+import os
+
+PORT = int(os.environ.get('PORT', 5000))
 
 bot = telebot.TeleBot(config.TOKEN, parse_mode='html')
+
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                    level=logging.INFO)
+
+logger = logging.getLogger(__name__)
 
 
 @bot.message_handler(commands=['start'])
@@ -237,13 +246,10 @@ def callback_inline(call):
                                   message_id=call.message.message_id,
                                   text="See Program", reply_markup=None)
 
-            # show alert
-            # bot.answer_callback_query(callback_query_id=call.id, show_alert=False,
-            #                           text="Testing")
-
     except Exception as e:
         print(repr(e))
 
 
 # RUN
 bot.polling(none_stop=True)
+bot.set_webhook(url='https://damp-brook-53988.herokuapp.com/')

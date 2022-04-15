@@ -242,5 +242,4 @@ def callback_inline(call):
 
 # RUN
 bot.polling(none_stop=True)
-bot.set_webhook('https://vitruviabot.herokuapp.com/' + config.TOKEN)
 

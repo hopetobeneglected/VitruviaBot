@@ -228,7 +228,7 @@ def callback_inline(call):
                                                        '\n'
                                                        '<b>August 2022</b>\n'
                                                        '\n'
-                                                       '<u>KW 34 (22.08. - 28.08.)</u>\n'
+                                                       '<u>KW 34 (22.08. - 28.08pip freeze > requirements.txt.)</u>\n'
                                                        '27. Sa    Segeln mit dem ASV')
 
             # remove inline buttons
